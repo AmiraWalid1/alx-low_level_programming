@@ -2,17 +2,17 @@
 
 /**
  * print_alphabet_x10 - prints 10 times the alphabet, in lowercase
- * q: counter
+ * c: counter
  * ch: alphabet
  *
  * Return: void
  */
 void print_alphabet_x10(void)
 {
-	int q;
+	int c;
 	char ch;
 
-	for (q = 0 ; q <= 10 ; q++)
+	for (c = 1 ; c <= 10 ; c++)
 	{
 		for (ch = 'a' ; ch <= 'z' ; ch++)
 		{
