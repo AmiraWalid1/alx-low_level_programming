@@ -24,6 +24,6 @@ int main(void)
 			n /= i;
 		i += 2;
 	}
-	printf("%ld", largest_prime_factor);
+	printf("%ld\n", largest_prime_factor);
 	return (0);
 }
