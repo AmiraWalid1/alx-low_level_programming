@@ -1,19 +1,6 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * rec - prints number
- * @n: number
- *
- * Return: void
- */
-void rec(int n)
-{
-	if (n == 0)
-		return;
-	rec(n / 10);
-	_putchar(n % 10 + '0');
-}
-/**
  * print_number - prints an integer , can only use _putchar function to print
  * @n: num to print
  *
@@ -21,15 +8,14 @@ void rec(int n)
  */
 void print_number(int n)
 {
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
+	unsinged int num = n;
+
 	if (n < 0)
 	{
-		n *= -1;
+		num = -num;
 		_putchar('-');
 	}
-	rec(n);
+	if (num / 10 > 0)
+		print_number(num / 10);
+	_putchar(num % 10 + '0');
 }
