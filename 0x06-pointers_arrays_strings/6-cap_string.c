@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdbool>
+#include <stdbool.h>
 /**
  * ISLower - check if character is lower
  * @c: character to check
@@ -37,7 +37,6 @@ bool ISDelimiter(char c)
  */
 char *cap_string(char *str)
 {
-	int i;
 	char *ptr = str;
 	bool delimiter = false;
 
