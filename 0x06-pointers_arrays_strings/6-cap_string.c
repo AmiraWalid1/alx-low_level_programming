@@ -21,7 +21,7 @@ bool ISDelimiter(char c)
 	char delimiter[] = " \n\t,;.!?\"(){}";
 	int i;
 
-	for (i = 0 ; i < 12 ; i++)
+	for (i = 0 ; i < 13 ; i++)
 	{
 		if (delimiter[i] == c)
 			return (true);
@@ -51,7 +51,7 @@ char *cap_string(char *str)
 			*ptr -= 32;
 			delimiter = false;
 		}
-		else if (delimiter)
+		else
 		{
 			delimiter = false;
 		}
