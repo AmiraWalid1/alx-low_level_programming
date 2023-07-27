@@ -21,7 +21,7 @@ bool ISDelimiter(char c)
 	char delimiter[] = " \n\t,;.!?\"(){}";
 	int i;
 
-	for (i = 0 ; i < 13 ; i++)
+	for (i = 0 ; i < 12 ; i++)
 	{
 		if (delimiter[i] == c)
 			return (true);
