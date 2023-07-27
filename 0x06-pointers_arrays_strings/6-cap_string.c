@@ -41,7 +41,7 @@ char *cap_string(char *str)
 	char *ptr = str;
 	bool delimiter = false;
 
-	while (*str)
+	while (*ptr)
 	{
 		if (ISDelimiter(*ptr))
 		{
@@ -56,7 +56,7 @@ char *cap_string(char *str)
 		{
 			delimiter = false;
 		}
-		str++;
+		ptr++;
 	}
 	return (str);
 }
