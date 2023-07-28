@@ -16,9 +16,7 @@ char *leet(char *str)
 		for (j = 0 ; key[j] != '\0' ; j++)
 		{
 			if (str[i] == key[j] || str[i] == key[j] - 32)
-			{
-					str[i] = val[j] + '0';
-			}
+				str[i] = val[j] + '0';
 		}
 	}
 	return (str);
