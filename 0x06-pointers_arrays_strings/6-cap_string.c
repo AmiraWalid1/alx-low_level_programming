@@ -4,9 +4,9 @@
  * ISLower - check if character is lower
  * @c: character to check
  *
- * Return: true "lower" / false "otherwise"
+ * Return: 1 "lower" / 0 "otherwise"
  */
-bool ISLower(char c)
+int ISLower(char c)
 {
 	return (c >= 'a' && c <= 'z');
 }
@@ -14,9 +14,9 @@ bool ISLower(char c)
  * ISDelimiter - check if character is delimiter
  * @c: character to check
  *
- * Return: true "is delimiter" / false "oterwise"
+ * Return: 1 "is delimiter" / 0 "oterwise"
  */
-bool ISDelimiter(char c)
+int ISDelimiter(char c)
 {
 	char delimiter[] = " \n\t,;.!?\"(){}";
 	int i;
@@ -24,9 +24,9 @@ bool ISDelimiter(char c)
 	for (i = 0 ; i < 13 ; i++)
 	{
 		if (delimiter[i] == c)
-			return (true);
+			return (1);
 	}
-	return (false);
+	return (0);
 }
 
 /**
@@ -38,22 +38,22 @@ bool ISDelimiter(char c)
 char *cap_string(char *str)
 {
 	char *ptr = str;
-	bool delimiter = false;
+	int delimiter = 0;
 
 	while (*ptr)
 	{
 		if (ISDelimiter(*ptr))
 		{
-			delimiter = true;
+			delimiter = 1;
 		}
 		else if (ISLower(*ptr) && delimiter)
 		{
 			*ptr -= 32;
-			delimiter = false;
+			delimiter = 0;
 		}
 		else
 		{
-			delimiter = false;
+			delimiter = 0;
 		}
 		ptr++;
 	}
