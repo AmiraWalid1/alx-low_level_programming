@@ -13,5 +13,6 @@ char *cap_string(char *);
 bool ISLower(char c);
 bool ISDelimiter(char c);
 char *leet(char *);
+char *rot13(char *);
 
 #endif
