@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * prime - check ifif n is prime or not with recursion
+ * prime - check if n is prime or not with recursion
  * @n: num to check
- * @x: num help in check
+ * @x: integer help in check
  *
  * Return: 1 if prime / 0 otherwise
  */
