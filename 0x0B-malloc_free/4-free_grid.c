@@ -4,7 +4,7 @@
  * alloc_grid function.
  * @grid: 2 dimensional grid
  * @height: height of grid
- * 
+ *
  * Return: void
  */
 void free_grid(int **grid, int height)
