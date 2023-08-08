@@ -19,11 +19,14 @@ char *argstostr(int ac, char **av)
 	for (i = 0 ; i < ac ; i++)
 	{
 		sz += (strlen(av[i]) + 1);
-		str = realloc(str, sz);
-		if (str == NULL)
-		{
-			return (NULL);
-		}
+	}
+	str = malloc(sz);
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0 ; i < ac ; i++)
+	{
 		while (*av[i])
 		{
 			str[k++] = *av[i];
