@@ -10,23 +10,15 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *newptr;
-	int i, cpysz;
+	unsigned int i;
 
 	if (new_size == old_size)
 	{
 		return (ptr);
 	}
-	else if (old_size < new_size)
-	{
-		cpysz = old_size;
-	}
-	else
-	{
-		cpysz = new_size;
-	}
 	if (new_size == 0)
 	{
-		if (ptr)
+		if (ptr != NULL)
 		{
 			free(ptr);
 		}
@@ -44,7 +36,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (newptr);
 	}
 	/*ptr not NULL cpy old_ize*/
-	for (i = 0 ; i < cpysz ; i++)
+	for (i = 0 ; i < old_size && i < new_size; i++)
 	{
 		*((char *)newptr + i) = *((char *)ptr + i);
 	}
