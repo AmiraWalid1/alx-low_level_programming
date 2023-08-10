@@ -29,10 +29,11 @@ int main(int argc, char **argv)
 {
 	if (argc != 3 || !isnum(argv[1]) || !isnum(argv[2]))
 	{
-		printf("Error\n");
+		puts("Error\n");
 		exit(98);
 	}
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	printf("%d", atoi(argv[1]) * atoi(argv[2]));
+	_putchar('\n');
 
 	return (0);
 }
