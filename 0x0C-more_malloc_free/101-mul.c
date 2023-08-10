@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 /**
  * isnum - check if str is num or not
  * @str: string to check it
@@ -30,11 +29,10 @@ int main(int argc, char **argv)
 {
 	if (argc != 3 || !isnum(argv[1]) || !isnum(argv[2]))
 	{
-		puts("Error\n");
+		printf("Error\n");
 		exit(98);
 	}
-	printf("%d", atoi(argv[1]) * atoi(argv[2]));
-	_putchar('\n');
+	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 
 	return (0);
 }
