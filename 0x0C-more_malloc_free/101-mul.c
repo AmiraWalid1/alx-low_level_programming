@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 /**
  * isnum - check if str is num or not
  * @str: string to check it
  *
  * Return: 1 (true) / 0 (false)
  */
-int isnum(char const *str)
+int isnum(char *str)
 {
 	while (*str)
 	{
