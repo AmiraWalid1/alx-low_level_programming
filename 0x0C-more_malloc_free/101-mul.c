@@ -24,10 +24,6 @@ void _puts(char *str)
  */
 int isnum(char *str)
 {
-	if (*str == '-')
-	{
-		str++;
-	}
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
@@ -44,21 +40,12 @@ int isnum(char *str)
  */
 int _atoi(char *str)
 {
-	int num = 0, checkneg = 0;
+	int num = 0;
 
-	if (*str == '-')
-	{
-		str++;
-		checkneg = 1;
-	}
 	while (*str)
 	{
 		num = (num * 10) + (*str - '0');
 		str++;
-	}
-	if (checkneg)
-	{
-		return (-num);
 	}
 	return (num);
 }
