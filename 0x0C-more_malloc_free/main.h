@@ -9,4 +9,7 @@ int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void _putchar(char c);
 int isnum(char *str);
+int _atoi(char *str);
+void _puts(char *str);
+void print_number(int x);
 #endif
