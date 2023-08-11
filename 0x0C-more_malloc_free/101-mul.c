@@ -38,9 +38,9 @@ int isnum(char *str)
  *
  * Return: integer
  */
-int _atoi(char *str)
+unsigned long int _atoi(char *str)
 {
-	int num = 0;
+	unsigned long int num = 0;
 
 	while (*str)
 	{
@@ -55,18 +55,13 @@ int _atoi(char *str)
  *
  * Return: void
  */
-void print_number(int n)
+void print_number(unsigned long int n)
 {
-	int num = n;
+	unsigned long int num = n;
 
 	if (num == 0)
 	{
 		return;
-	}
-	if (num < 0)
-	{
-		num = -num;
-		_putchar('-');
 	}
 	print_number(num / 10);
 	_putchar(num % 10 + '0');
