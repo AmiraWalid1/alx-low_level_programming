@@ -5,13 +5,14 @@
 /**
  * _strlen - get length of string.
  * @str: string
- * 
+ *
  * Return: length
 */
 int _strlen(char *str)
 {
 	int len = 0;
-	while(*str != '\0')
+
+	while (*str != '\0')
 	{
 		len++;
 		str++;
@@ -21,8 +22,8 @@ int _strlen(char *str)
 /**
  * _cpystr - copy s2 in s1
  * @s1: first string
- * @s2: second string 
- * 
+ * @s2: second string
+ *
  * Return: s1 after copy s2 in it
 */
 char *_cpystr(char *s1, char *s2)
