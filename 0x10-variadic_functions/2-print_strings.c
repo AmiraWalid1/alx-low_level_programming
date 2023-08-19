@@ -21,6 +21,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	while (cnt--)
 	{
 		char *curr = va_arg(strings, char *);
+
 		printf("%s%s", curr ? curr : "(nil)",
 		cnt ? (separator ? separator : "") : "\n");
 	}
