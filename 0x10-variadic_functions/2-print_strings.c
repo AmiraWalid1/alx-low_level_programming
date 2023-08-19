@@ -20,7 +20,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(strings, n);
 	while (cnt--)
 	{
-		printf("%s%s", va_arg(strings, char *),
+		char *curr = va_arg(strings, char *);
+		printf("%s%s", curr ? curr : "(nil)",
 		cnt ? (separator ? separator : "") : "\n");
 	}
 	va_end(strings);
