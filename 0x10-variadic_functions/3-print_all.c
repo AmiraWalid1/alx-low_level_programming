@@ -65,7 +65,7 @@ void print_all(const char * const format, ...)
 	int i = 0, j, start = 0;
 
 	va_start(list, format);
-	while (*(format + i))
+	while (format && *(format + i))
 	{
 		j = 0;
 		while (j < 4)
