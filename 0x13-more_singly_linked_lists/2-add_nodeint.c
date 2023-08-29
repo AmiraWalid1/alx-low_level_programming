@@ -13,6 +13,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
 	if (new_node == NULL || head == NULL)
 	{
+		free(new_node);
 		return (NULL);
 	}
 	new_node->n = n;
