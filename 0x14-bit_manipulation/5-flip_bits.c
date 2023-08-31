@@ -27,7 +27,8 @@ unsigned long int _log2(unsigned long int n)
 */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int res = 0, i;
+	unsigned long int i;
+	unsigned int res = 0;
 
 	i = (_log2(n) > _log2(m) ? _log2(n) : _log2(m)) + 1;
 	while (i--)
