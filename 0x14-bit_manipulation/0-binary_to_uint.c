@@ -2,23 +2,6 @@
 #include <string.h>
 
 /**
- * _pow - calculate power
- * @base: base
- * @power: power
- *
- * Return: base power power.
-*/
-int _pow(int base, int power)
-{
-	int res = 1;
-
-	while (power--)
-	{
-		res *= base;
-	}
-	return (res);
-}
-/**
  * binary_to_uint - converts a binary number to an unsigned int.
  * @b: pointing to a string of 0 and 1 chars.
  *
@@ -44,7 +27,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			res += (*b - '0') * _pow(2, i);
+			res += (*b - '0') * (1 << i);
 			i--;
 		}
 		b++;
