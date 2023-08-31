@@ -5,6 +5,6 @@
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);
 void _putchar(char c);
-int _log2(int n);
+unsigned long int _log2(unsigned long int n);
 
 #endif /*MAIN_H*/
