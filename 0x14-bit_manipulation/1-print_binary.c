@@ -2,6 +2,23 @@
 #include <string.h>
 
 /**
+ * _log2 - log2 of number
+ * @n: number
+ *
+ * Return: log2(n)
+*/
+int _log2(int n)
+{
+	int res = 0;
+
+	while (n)
+	{
+		n >>= 1;
+		res++;
+	}
+	return (res);
+}
+/**
  * print_binary - prints the binary representation of a number.
  * @n: number.
  *
@@ -9,36 +26,20 @@
 */
 void print_binary(unsigned long int n)
 {
-	int i, flag = 0;
+	int i = _log2(n);
 
 	if (n == 0)
 	{
-		
+		_putchar('0');
 		return;
 	}
-	i = sizeof(n) * 8 - 1;
 	while (i--)
-	{	
-		if (n & (1 << i))
-		{
-			_putchar('1');
-		
-	int i, flag = 0;
-
-	if (n == 0)
 	{
-		
-		return;
-	}
-	i = sizeof(n) * 8 - 1;
-	while (i--)
-	{	
 		if (n & (1 << i))
 		{
 			_putchar('1');
-			flag = 1;
 		}
-		else if (flag)
+		else
 		{
 			_putchar('0');
 		}
