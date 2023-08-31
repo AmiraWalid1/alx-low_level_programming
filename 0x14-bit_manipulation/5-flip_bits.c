@@ -27,17 +27,17 @@ unsigned long int _log2(unsigned long int n)
 */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int i;
-	unsigned int res = 0;
+	unsigned long int nXORm = n ^ m;
+	unsigned int cnt = 0;
 
-	i = (_log2(n) > _log2(m) ? _log2(n) : _log2(m)) + 1;
-	while (i--)
+	while (nXORm)
 	{
-		if ((n & (1l << i)) ^ (m & (1l << i)))
+		if (nXORm & (1ul))
 		{
-			res++;
+			cnt++;
 		}
+		nXORm >>= 1ul ;
 	}
-	return (res);
+	return (cnt);
 
 }
