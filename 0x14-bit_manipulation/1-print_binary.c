@@ -26,7 +26,7 @@ unsigned long int _log2(unsigned long int n)
 */
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = _log2(n) + 1;
+	unsigned long int i = _log2(n) + 1, one = 1;
 
 	if (n == 0)
 	{
@@ -35,7 +35,7 @@ void print_binary(unsigned long int n)
 	}
 	while (i--)
 	{
-		if (n & (1 << i))
+		if (n & (one << i))
 		{
 			_putchar('1');
 		}
