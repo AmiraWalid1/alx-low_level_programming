@@ -19,7 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	curr = ht->array[idx_key];
 	while (curr)
 	{
-		if (strcmp(strcmp(curr->key, (char *) key))
+		if (strcmp(curr->key, (char *) key) == 0)
 		{
 			free(curr->value);
 			curr->value =  _strdup((char *)value);
