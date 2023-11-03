@@ -11,26 +11,12 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int idx_key;
-	hash_node_t *new_node, *curr;
+	hash_node_t *new_node;
 
 	if (key == NULL || strlen(key) == 0)
 		return (0);
 	idx_key = key_index((const unsigned char *)key, ht->size);
-	curr = ht->array[idx_key];
-	while (curr)
-	{
-		if (strcmp(curr->key, (char *) key) == 0)
-		{
-			free(curr->value);
-			curr->value =  _strdup((char *)value);
-			if (curr->value == NULL)
-			{
-				return (0);
-			}
-			return (1);
-		}
-		curr = curr->next;
-	}
+
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
