@@ -10,9 +10,8 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *curr;
 	int check = 0;
 
-	if (ht == NULL || ht->size == 0)
+	if (ht == NULL)
 	{
-		printf("{}\n");
 		return;
 	}
 	printf("{");
@@ -25,7 +24,7 @@ void hash_table_print(const hash_table_t *ht)
 				printf(", ");
 			else
 				check = 1;
-			printf("'%s': '%s'if(!check)", curr->key, curr->value);
+			printf("'%s': '%s'", curr->key, curr->value);
 			curr = curr->next;
 		}
 	}
