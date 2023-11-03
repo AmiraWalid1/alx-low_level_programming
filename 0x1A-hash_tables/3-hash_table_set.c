@@ -16,10 +16,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (key == NULL || strlen(key) == 0)
 		return (0);
 	idx_key = key_index((const unsigned char *)key, ht->size);
-	curr = ht->array[0];
+	curr = ht->array[idx_key];
 	while (curr)
 	{
-		if (strcmp(curr->value, (char *) value) == 0)
+		if (strcmp(strcmp(curr->key, (char *) key))
 		{
 			free(curr->value);
 			curr->value =  _strdup((char *)value);
