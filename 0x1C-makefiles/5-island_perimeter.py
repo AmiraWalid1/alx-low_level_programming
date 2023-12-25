@@ -6,23 +6,24 @@ def island_perimeter(grid):
     '''
     function returns the perimeter of the island described in grid
     '''
-    width = 0
-    height = 0
-
+    perimeter = 0
     for i in range(len(grid)):
-        flag = 0
-        for item in grid[i]:
-            if item == 1:
-                flag = 1
-                break
-        width += (1 if flag else 0)
-
-    for j in range(len(grid[0])):
-        flag = 0
-        for i in range(len(grid)):
+        for j in range(len(grid[0])):
             if grid[i][j] == 1:
-                flag = 1
-                break
-        height += (1 if flag else 0)
+                perimeter += 4
+                if i-1 >= 0 and grid[i-1][j] == 1: perimeter -= 1
+                if i+1 < len(grid) and grid[i+1][j] == 1: perimeter -= 1
+                if j-1 >= 0 and grid[i][j-1] == 1: perimeter -= 1
+                if j+1 < len(grid[0]) and grid[i][j+1] == 1: perimeter -= 1
 
-    return (width * 2) + (height * 2)
+    return perimeter
+
+if __name__ == "__main__":
+    grid = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ]
+    print(island_perimeter(grid))
