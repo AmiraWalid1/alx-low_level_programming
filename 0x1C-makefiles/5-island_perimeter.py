@@ -8,16 +8,21 @@ def island_perimeter(grid):
     '''
     width = 0
     height = 0
+
     for i in range(len(grid)):
-        curr_width = 0
+        flag = 0
         for item in grid[i]:
-            curr_width += item
-        width = max(width, curr_width)
+            if item == 1:
+                flag = 1
+                break
+        width += (1 if flag else 0)
 
     for j in range(len(grid[0])):
-        curr_height = 0
+        flag = 0
         for i in range(len(grid)):
-            curr_height += grid[i][j]
-        height = max(height, curr_height)
+            if grid[i][j] == 1:
+                flag = 1
+                break
+        height += (1 if flag else 0)
 
     return (width * 2) + (height * 2)
